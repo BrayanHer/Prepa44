@@ -83,31 +83,7 @@
 
 <!-- fin de lista de alumnos -->
 @endif
-@if(Session::get('sesiontipo')=="Biblioteca" || Session::get('sesiontipo')=="Admin")
-<!-- inicio de lista biblioteca -->
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Biblioteca">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
-          <i class="fa fa-book"></i>
-            <span class="nav-link-text">Biblioteca</span>
-          </a>
-          <ul class="sidenav-second-level collapse" id="collapseMulti">
-            <li>
-              <a href="{{route('AltasP')}}"><i class="fa fa-circle-o" aria-hidden="true"></i> &nbsp;Prestamo de Libros</a>
-            </li>
-            <li>
-              <a href="{{route('AltasL')}}"><i class="fa fa-circle-o" aria-hidden="true"></i> &nbsp;Libros</a>
-            </li>
-            <li>
-              <a href="{{route('AltasA')}}"><i class="fa fa-circle-o" aria-hidden="true"></i> &nbsp;Autores</a>
-            </li>
-            <li>
-              <a href="{{route('AltasE')}}"><i class="fa fa-circle-o" aria-hidden="true"></i> &nbsp;Editoriales</a>
-            </li>
-            <li>
-              <a href="{{route('AltasC')}}"><i class="fa fa-circle-o" aria-hidden="true"></i> &nbsp;Categorías</a>
-            </li>
-          </ul>
-  @endif
+
   @if(Session::get('sesiontipo')=="Admin")
 
 <!-- fin de lista biblioteca -->

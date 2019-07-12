@@ -1,71 +1,159 @@
 @extends('administrador')
 @section('admincontent')
-
 <style>
   * {
     margin:2px;
     padding:1px;
   }
-  a{
-    color:white;
+  #idicon{
+      color:black;
   }
-  hr{
-    background:white;
+  #bodyint{
+    background-color: #d6d8d9;
+  }
+  a{
+      color:white;
+  }
+  #cb{
+      color:black;
   }
 </style>
 <div class="container">
-  <div class="row">
-    <div class="card text-white bg-dark mb-3" style="width: 30rem;">
-      <div class="card-body">
-        <h5 class="card-title"><i class="fa fa-users"></i>&nbsp;Maestros</h5>
-        <hr color="black" size=1>
-        <a href="{{route('Maestros')}}" class="card-link"><i class="fa fa-plus"></i>&nbsp;Nuevo Registro</a>
-        <a href="{{route('C_Maestros')}}" class="card-link">Registros</a>
-      </div>
-    </div>
-
-    <div class="card text-white bg-dark mb-3" style="width: 30rem;">
-      <div class="card-body">
-        <h5 class="card-title"><i class="fa fa-graduation-cap"></i>&nbsp;Alumnos</h5>
-        <hr color="black" size=1>
-        <a href="{{route('Alumnos')}}" class="card-link"><i class="fa fa-plus"></i>&nbsp;Nuevo Registro</a>
-        <a href="{{route('C_alumno')}}" class="card-link">Registros</a>
-      </div>
-    </div>
-
-    <div class="card text-white bg-dark mb-3" style="width: 28rem;">
-      <div class="card-body">
-        <h5 class="card-title"><i class="fa fa-book"></i>&nbsp;Biblioteca</h5>
-        <hr color="black" size=1>
-        <a href="{{route('AltasL')}}" class="card-link"><i class="fa fa-plus"></i>&nbsp;Nuevo Libro</a>
-        <a href="#" class="card-link">Registros</a>
-      </div>
-    </div>
-
-    <div class="card text-white bg-dark mb-3" style="width: 32rem;">
-      <div class="card-body">
-        <h5 class="card-title"><i class="fa fa-sliders"></i>&nbsp;Administración</h5>
-        <hr color="black" size=1>
-        <a href="#" class="card-link">Administradores</a>
-        <a href="#" class="card-link">Directivos</a>
-        <a href="{{route('AMaterias')}}" class="card-link"> Materias</a>
-        <a href="{{route('Listas')}}" class="card-link"> Listas de Grupos</a>
-        <a href="{{route('C_Usuarios')}}" class="card-link">Usuarios Registrados</a>
-        <a href="{{route('ConsultaA')}}" class="card-link">Planeaciones y Exámenes</a>
-      </div>
-    </div>
-
-    <div class="card text-white bg-dark mb-3" style="width: 32rem;" >
-      <div class="card-body">
-        <h5 class="card-title"><i class="fa fa-globe" aria-hidden="true"></i>
-        &nbsp;Página Web</h5>
-        <hr color="black" size=1>
-
-        <a href="{{route('ContServicios')}}" class="card-link"><i class="fa fa-cog" aria-hidden="true"></i>Servicios Y Trámites</a>
-        <a href="#" class="card-link"><i class="fa fa-cog" aria-hidden="true"></i>Talleres y Actividadess</a>
-        <a href="#" class="card-link"></a>
-      </div>
-    </div>
+    <div class="row"> 
+    <!--________________________  -->
+    <div class="alert alert-dark col-md-11" role="alert">
+    <div class="row">
+  <div class="col-sm-3">
+  <button class="btn btn-dark btn-sm" data-toggle="collapse" href="#Estudiantes" role="button" aria-expanded="false" aria-controls="collapseExample">
+  <i class="fa fa-graduation-cap"></i>&nbsp;
+               Estudiantes
+                </button>  
   </div>
+  <div class="col-sm-3">
+  <button class="btn btn-dark btn-sm" data-toggle="collapse" href="#Docentes" role="button" aria-expanded="false" aria-controls="collapseExample">
+  <i class="fa fa-users"></i>&nbsp;
+               Maestros
+                </button>
+  </div>
+  <div class="col-sm-3">
+  <button class="btn btn-dark btn-sm" data-toggle="collapse" href="#Pagina" role="button" aria-expanded="false" aria-controls="collapseExample">
+  <i class="fa fa-globe" aria-hidden="true"></i>&nbsp;
+                Pagina Web
+                </button>
+  </div>
+  <div class="col-sm-2">
+  <button class="btn btn-dark btn-sm" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+  <i class="fa fa-sliders"></i>&nbsp;
+                Administrador
+                </button>
+  </div>
+</div> 
+    </div>
+
+    
+            <div class="collapse  col-md-11" id="Estudiantes">
+                <div  id="bodyint"class="card card-body">
+                <strong><i id="idicon" class="fa fa-wrench"></i> &nbsp;Configuracion de los Alumnos</strong>
+                    <div class="row col-md-12">
+<a href="{{route('Alumnos')}}" >
+                        <button id="cb" type="button" class="btn btn-success"  data-toggle="tooltip" data-placement="top" title="Agrear alumnos">
+                            <i id="idicon"class="fa fa-user-plus"></i>
+                            Agregar Alumno
+                        </button>
+</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{{route('Alumnos')}}" >
+                        <button id="cb" type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Agrear alumnos">
+                            <i id="idicon"class="fa fa-table"></i>
+                            Registro de alumnos
+                        </button>
+</a>
+                    </div>    
+                </div>
+            </div>
+    
+    <!--________________________  -->
+    
+              
+            <div class="collapse  col-md-11" id="Docentes">
+                <div  id="bodyint"class="card card-body">
+                <strong><i id="idicon" class="fa fa-wrench"></i> &nbsp;Configuracion de los Docentes</strong>
+                    <div class="row col-md-12">
+<a href="{{route('Alumnos')}}" >
+                        <button id="cb" type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Agrear alumnos">
+                            <i id="idicon"class="fa fa-user-plus"></i>
+                            Agregar Maestro
+                        </button>
+</a>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{{route('Alumnos')}}" >
+                        <button id="cb" type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Agrear alumnos">
+                            <i id="idicon"class="fa fa-table"></i>
+                            Registro de Maestros
+                        </button>
+</a>
+                    </div>    
+                </div>
+            </div>
+    
+    <!--________________________  -->
+   
+               
+            <div class="collapse  col-md-11" id="Pagina">
+                <div  id="bodyint"class="card card-body">
+                <strong><i id="idicon" class="fa fa-wrench"></i> &nbsp;Configuracion de la pagina Web</strong>
+                    <div class="row col-md-12">
+                    
+ <a href="">                      
+                        <button id="cb" type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Agrear alumnos">
+                            <i id="idicon"class="fa fa-globe"></i>
+                            Servicios y tramites
+                        </button>
+</a>                          
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="">
+                         <button id="cb" type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Agrear alumnos">
+                            <i id="idicon"class="fa fa-globe"></i>
+                            Talleres y Actividades
+                        </button>
+</a>
+                    </div>    
+                </div>
+            </div>
+       
+    <!--________________________  -->
+       
+               
+            <div class="collapse  col-md-11" id="collapseExample">
+                <div  id="bodyint"class="card card-body">
+                <strong><i id="idicon" class="fa fa-wrench"></i> &nbsp;Configuracion del Administrador</strong>
+                    <div class="row col-md-12">
+<a href="">
+                        <button id="cb" type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Agrear alumnos">
+                           <i  id="idicon" class="fa fa-cogs"></i>
+                            Directivos
+                        </button>
+</a>
+ <a href="">                         
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        <button  id="cb" type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Agrear alumnos">
+                           <i  id="idicon" class="fa fa-cogs"></i>
+                            Materias
+                        </button>
+</a>  
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="">
+                        <button id="cb" type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Agrear alumnos">
+                           <i  id="idicon" class="fa fa-cogs"></i>
+                            Listas de grupos
+                        </button>
+</a>
+                    </div>    
+                </div>
+            </div>
+       
+    <!--________________________  -->
+    </div>
 </div>
-@stop
+@stop   
